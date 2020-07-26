@@ -137,6 +137,8 @@ header a:hover{
     border-right: 2px solid #E9EBED;
     padding-bottom: 10px;
     min-width: 100px;
+    display: flex;
+    flex-direction: column;
 }
 
 .main{
@@ -144,6 +146,8 @@ header a:hover{
 	background: white; 
 	margin: auto;
 	display: flex;
+	height: calc(100% - 70px);
+	overflow: hidden;
 }
 
 .main-search-form{
@@ -191,16 +195,21 @@ header a:hover{
 	max-width: 60%; 
 	min-width: 0;
 }
+
+.dialogs{
+	overflow: hidden;
+    overflow-y: scroll;
+}
+
 .dialogs ul{
-	margin: 0;padding: 0;
+	margin: 0;
+	padding: 0;
 	list-style: none;
-	max-height: 85%;
 	margin-right: -2px; 
 	overflow: hidden;
 }
 .dialogs ul:hover{
 	overflow-y: scroll;
-    overflow-x: hidden;
 }
 
 .icon-bar-1{
@@ -237,17 +246,20 @@ li:hover{
 }
 
 .messages{
-	height: 730px; 
-	transform: rotate(180deg); 
-	overflow: hidden; 
-	overflow-y: scroll;
+	overflow: hidden;
+    overflow-y: scroll;
+    flex: 1;
+    flex-direction: column-reverse;
+    display: flex;
+    margin: auto;
+    padding-right: 20px;
+    max-width: 560px;
+    width: 100%;
 }
 
 .message{
 	max-width: 560px; 
-	padding: 10px 15px 10px 35px; 
-	margin: 0 auto; 
-	transform: rotate(180deg); 
+	padding: 10px 15px 10px 35px;
 	cursor: pointer;
 }
 
@@ -287,12 +299,11 @@ li:hover{
 }
 
 .new-message-form{
-	max-width: 554px;
-	padding-bottom: 21px; 
-	display: flex; 
-	margin: auto;
-	padding-left: 15px;
-	padding-right: 15px;
+	max-width: 590px;
+    padding-bottom: 21px;
+    display: flex;
+    margin: auto;
+    width: 100%;
 }
 
 .new-message-body{
@@ -411,6 +422,16 @@ li:hover{
 @media screen and (min-width: 350px) and (max-width: 450px) {
 .left-menu{
   	margin: 0 20px 0 20px;
+  }
+}
+
+@media screen and (max-height: 600px) {
+.new-message-panel{
+  	display: none;
+  }
+
+  .main{
+  	height: calc(100% - 48px);
   }
 }
 
